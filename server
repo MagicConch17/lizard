@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+/**
+ * server          使用脚本管理
+ * author          :  yxk
+ * createTime      : 2019/11/14 10:29
+ * descripition    :
+ */
+
+
+require "vendor/autoload.php";
+
+/**
+ * 设置配置文件目录和属性
+ */
+define("APP_PATH",__DIR__.'/Data/Log/');
+define('MONGODM_CONFIG',__DIR__."/config/databases.php");
+define('MYSQL_CONFIG',__DIR__."/config/databases.php");
+
+
+/**
+ * 开始程序使用
+ */
+
+// 暂时关闭注入模型
+//$app = (new \Lib\System\Input());
+
+try{
+    (new \Lib\System\Input());
+    @$msg = file_get_contents(APP_PATH.'/success.log');
+    @file_put_contents(APP_PATH,$msg.date('Y-m-d H:i:s')."执行成功\n");
+}catch (\Exception $e){
+    // TODO 此处需要修改成规定时间统计日程
+    echo "异常咯！！\n".$e->getMessage();
+    @$msg = file_get_contents(APP_PATH.'/error.log');// 读取当前文件内容
+    @file_put_contents(APP_PATH,$e->getMessage()."异常停止".date("Y-m-d H:i:s")."\n");
+}

@@ -1,0 +1,41 @@
+{
+    "name": "higanbana/lizard",
+    "description": "ketangpai",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Lib\\": "lib/"
+        },
+        "files": [
+            "config/databases.php",
+            "config/command.php",
+            "config/function.php"
+        ]
+    },
+    "require": {
+        "php": ">=7.1",
+        "purekid/mongodm": "dev-master",
+        "catfan/medoo": "dev-master",
+        "phpmailer/phpmailer": "dev-master"
+    },
+    "require-dev": {
+        "php": ">=7.1"
+    },
+    "authors": [
+        {
+            "name": "yxk",
+            "email": "yangxiukang@ketangpai.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    },
+    "config": {
+        "secure-http": false
+    }
+}

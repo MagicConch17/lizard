@@ -1,0 +1,24 @@
+{
+    "name": "purekid/mongodm",
+    "description": "MongoDB ORM that includes support for references,embed and multilevel inheritance.",
+    "version": "1.5.0",
+    "keywords": ["mongodm", "orm", "mongodb"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael.Gan",
+            "homepage": "http://github/purekid"
+        }
+    ],
+    "require": {
+        "alcaeus/mongo-php-adapter": "1.0.9"
+    },
+    "require-dev": {
+        "chriskite/phactory": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Purekid\\Mongodm\\": "src"
+        }
+    }
+}
